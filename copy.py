@@ -23,6 +23,9 @@ def main():
 	print(f"Copied {files_count} files and {dirs_count} directories.")
 
 def setup_argument_parser():
+	"""
+	Setup argument parser wtih required arguments and their properties.
+	"""
 	parser = argparse.ArgumentParser(
 		description = "Copy files and/or directories to another or directory."
 	)
