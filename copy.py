@@ -8,6 +8,9 @@ import os
 import argparse
 
 def main():
+	"""
+	Parse and handle user's call.
+	"""
 	parser = setup_argument_parser()
 	arguments = parser.parse_args()
 	sources, destination = (arguments.sources, arguments.destination)
