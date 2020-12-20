@@ -1,4 +1,6 @@
-# Replicated command: cp
+"""
+Replicated command: cp
+"""
 
 import os
 import argparse
