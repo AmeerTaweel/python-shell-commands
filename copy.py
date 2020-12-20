@@ -1,5 +1,7 @@
 """
 Replicated command: cp
+
+Copy files and/or directories to another or directory.
 """
 
 import os
