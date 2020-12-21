@@ -6,6 +6,7 @@ Copy files and/or directories to another or directory.
 
 import argparse
 import os
+from utils import file_utils as fu
 
 def main():
 	"""
@@ -18,10 +19,10 @@ def main():
 	files_count = 0
 	dirs_count = 0
 	for source in sources:
-		if does_file_exist(source):
+		if fu.does_file_exist(source):
 			files_count += 1
 			copy_file(source, destination)
-		elif does_dir_exist(source):
+		elif fu.does_dir_exist(source):
 			dirs_count += 1
 			copy_dir(source, destination)
 
@@ -49,15 +50,15 @@ def copy_file(src, dest):
 	"""
 	Copy the file from src to dest.
 	"""
-	if not does_file_exist(src):
+	if not fu.does_file_exist(src):
 		print(f"File {src} does not exist.")
 		return
 
 	make_dir(dest)
 
-	dest_file = nested_path(dest, basename(src))
+	dest_file = fu.nested_path(dest, fu.basename(src))
 
-	if does_file_exist(dest_file):
+	if fu.does_file_exist(dest_file):
 		can_override = ask_user_permission(
 			f"File {src} already exists in {dest}, override?"
 		)
@@ -76,15 +77,15 @@ def copy_dir(src, dest):
 	"""
 	Copy the dir from src to dest.
 	"""
-	if not does_dir_exist(src):
+	if not fu.does_dir_exist(src):
 		print(f"Directory {src} does not exist.")
 		return
 
 	make_dir(dest)
 
-	dest_dir = nested_path(dest, basename(src))
+	dest_dir = fu.nested_path(dest, fu.basename(src))
 
-	if does_dir_exist(dest_dir):
+	if fu.does_dir_exist(dest_dir):
 		can_override = ask_user_permission(
 			f"Directory {src} already exists in {dest}, override?"
 		)
@@ -106,7 +107,7 @@ def make_dir(path):
 	"""
 	Create directory if it does not exist. Do nothing otherwise.
 	"""
-	if not does_dir_exist(path):
+	if not fu.does_dir_exist(path):
 		os.mkdir(path)
 
 def ask_user_permission(question, default_to_no = True):
@@ -118,20 +119,7 @@ def ask_user_permission(question, default_to_no = True):
 	answer = input(f"{question} ({'N/y' if default_to_no else 'Y/n'}) >>> ")
 	if default_to_no:
 		return answer.lower() in yes
-	else:
-		return answer.lower() not in no
-
-def does_file_exist(path):
-	return os.path.exists(path) and os.path.isfile(path)
-
-def does_dir_exist(path):
-	return os.path.exists(path) and os.path.isdir(path)
-
-def nested_path(dir, nested_entry):
-	return os.path.normpath(f"{dir}/{nested_entry}")
-
-def basename(path):
-	return os.path.basename(path.rstrip("/"))
+	return answer.lower() not in no
 
 if __name__ == "__main__":
 	main()
