@@ -4,8 +4,8 @@ Replicated command: cp
 Copy files and/or directories to another or directory.
 """
 
-import os
 import argparse
+import os
 
 def main():
 	"""
