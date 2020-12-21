@@ -13,7 +13,7 @@ def main():
 	parser = setup_argument_parser()
 	arguments = parser.parse_args()
 	to_print = arguments.to_print
-	print(to_print)
+	echo(to_print)
 
 def setup_argument_parser():
 	"""
@@ -27,6 +27,12 @@ def setup_argument_parser():
 		help = "The text to print."
 	)
 	return parser
+
+def echo(string):
+	"""
+	Print s to the output stream.
+	"""
+	print(string)
 
 if __name__ == "__main__":
 	main()
