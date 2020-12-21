@@ -28,11 +28,11 @@ def setup_argument_parser():
 	)
 	return parser
 
-def echo(string):
+def echo(string, end = "\n"):
 	"""
 	Print s to the output stream.
 	"""
-	print(string)
+	print(string, end = end)
 
 if __name__ == "__main__":
 	main()
