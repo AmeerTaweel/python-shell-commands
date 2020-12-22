@@ -7,6 +7,7 @@ Copy files and/or directories to another or directory.
 import argparse
 import os
 from utils import file_utils as fu
+from mkdir import make_dir
 
 def main():
 	"""
@@ -102,13 +103,6 @@ def copy_dir(src, dest):
 				copy_file(entry.path, dest_dir)
 			elif entry.is_dir():
 				copy_dir(entry.path, dest_dir)
-
-def make_dir(path):
-	"""
-	Create directory if it does not exist. Do nothing otherwise.
-	"""
-	if not fu.does_dir_exist(path):
-		os.mkdir(path)
 
 def ask_user_permission(question, default_to_no=True):
 	"""
