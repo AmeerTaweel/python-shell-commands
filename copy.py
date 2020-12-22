@@ -31,7 +31,7 @@ def main():
 
 def setup_argument_parser():
 	"""
-	Setup argument parser wtih required arguments and their properties.
+	Setup argument parser with required arguments and their properties.
 	"""
 	parser = argparse.ArgumentParser(
 		description="Copy files and/or directories to another or directory."
@@ -64,10 +64,10 @@ def copy_file(src, dest):
 			f"File {src} already exists in {dest}, override?"
 		)
 		if not can_override:
-			print(f"File {dest_file} was not overrided.")
+			print(f"File {dest_file} was not overridden.")
 			return
 		os.remove(dest_file)
-		print(f"File {dest_file} was overrided.")
+		print(f"File {dest_file} was overridden.")
 
 	with open(src, "r") as file, open(dest_file, "a") as copy:
 		# Copying the file at once can cause memory problems on large files.
@@ -91,10 +91,10 @@ def copy_dir(src, dest):
 			f"Directory {src} already exists in {dest}, override?"
 		)
 		if not can_override:
-			print(f"Directory {dest_dir} was not overrided.")
+			print(f"Directory {dest_dir} was not override D.")
 			return
 		os.rmdir(dest_dir)
-		print(f"Directory {dest_dir} was overrided.")
+		print(f"Directory {dest_dir} was override D.")
 
 	make_dir(dest_dir)
 	with os.scandir(src) as dir_entries:

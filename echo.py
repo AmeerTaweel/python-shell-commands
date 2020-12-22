@@ -19,7 +19,7 @@ def main():
 
 def setup_argument_parser():
 	"""
-	Setup argument parser wtih required arguments and their properties.
+	Setup argument parser with required arguments and their properties.
 	"""
 	parser = argparse.ArgumentParser(
 		description="Print the passed argument to the output stream."
