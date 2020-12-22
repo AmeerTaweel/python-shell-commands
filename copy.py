@@ -33,16 +33,16 @@ def setup_argument_parser():
 	Setup argument parser wtih required arguments and their properties.
 	"""
 	parser = argparse.ArgumentParser(
-		description = "Copy files and/or directories to another or directory."
+		description="Copy files and/or directories to another or directory."
 	)
 	parser.add_argument(
 		"sources",
-		nargs = "+",
-		help = "The file/s or directory/ies to be copied."
+		nargs="+",
+		help="The file/s or directory/ies to be copied."
 	)
 	parser.add_argument(
 		"destination",
-		help = "The directory to copy to."
+		help="The directory to copy to."
 	)
 	return parser
 
@@ -110,7 +110,7 @@ def make_dir(path):
 	if not fu.does_dir_exist(path):
 		os.mkdir(path)
 
-def ask_user_permission(question, default_to_no = True):
+def ask_user_permission(question, default_to_no=True):
 	"""
 	Ask question to user and return True if he agrees, and False if he does not.
 	"""
