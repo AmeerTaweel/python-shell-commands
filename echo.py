@@ -6,6 +6,7 @@ Print the passed argument to the output stream.
 
 import argparse
 
+
 def main():
 	"""
 	Parse and handle user's call.
@@ -15,24 +16,27 @@ def main():
 	to_print = arguments.to_print
 	echo(to_print)
 
+
 def setup_argument_parser():
 	"""
 	Setup argument parser wtih required arguments and their properties.
 	"""
 	parser = argparse.ArgumentParser(
-		description = "Print the passed argument to the output stream."
+		description="Print the passed argument to the output stream."
 	)
 	parser.add_argument(
 		"to_print",
-		help = "The text to print."
+		help="The text to print."
 	)
 	return parser
 
-def echo(string, end = "\n"):
+
+def echo(string, end="\n"):
 	"""
 	Print s to the output stream.
 	"""
-	print(string, end = end)
+	print(string, end=end)
+
 
 if __name__ == "__main__":
 	main()
