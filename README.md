@@ -10,3 +10,4 @@ Format: [Python Command => Replicated Command]
 * [echo.py => echo](echo.py)
 * [cat.py => cat](cat.py)
 * [mkdir.py => mkdir](mkdir.py)
+* [touch.py => touch](touch.py)
