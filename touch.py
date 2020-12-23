@@ -23,7 +23,8 @@ def setup_argument_parser():
 	Setup argument parser with required arguments and their properties.
 	"""
 	parser = argparse.ArgumentParser(
-		description = "Create a new file if it does not exist and update access and modification time if does."
+		description = "Create a new file if it does not exist and update \
+			access and modification time if does."
 	)
 	parser.add_argument(
 		"file_path",
