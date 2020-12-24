@@ -11,3 +11,4 @@ Format: [Python Command => Replicated Command]
 * [cat.py => cat](cat.py)
 * [mkdir.py => mkdir](mkdir.py)
 * [touch.py => touch](touch.py)
+* [pwd.py => pwd](pwd.py)
